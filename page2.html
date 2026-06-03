@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подарок для мамы | Страница 2</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        .btn-yes {
+            position: relative;
+            right: 75px;
+            margin: auto;
+            width: 100px;
+            height: 65px;
+            background: #69ff47;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.8rem;
+        }
+
+        .btn-yes:hover {
+            animation: 0.5s ease-in-out infinite btn-yes;
+        }
+
+        @keyframes btn-yes {
+            from {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        .btn-no {
+            position: absolute;
+            top: 85px;
+            right: 0;
+            bottom: 0;
+            left: 125px;
+            margin: auto;
+            width: 100px;
+            height: 65px;
+            /* Чтобы можно было менять left/top */
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            /* Плавный перескок */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.8rem;
+        }
+
+        .btn-no:hover {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="question">Что-то не расслышал. Повтори-ка еще раз то что ты сказала?</h1>
+
+    <div class="btn-div">
+        <a href="page3.html">
+            <button class="btn-yes">ДА!</button>
+        </a>
+        <button class="btn-no">НЕТ!</button>
+    </div>
+</body>
+
+</html>

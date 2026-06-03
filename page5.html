@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        .btn-yes {
+            position: relative;
+            right: 100px;
+            margin: auto;
+            width: 150px;
+            height: 75px;
+            background: #69ff47;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            opacity: 0;
+        }
+
+        .btn-no {
+            position: absolute;
+            top: 120px;
+            right: 0;
+            bottom: 0;
+            left: 150px;
+            margin: auto;
+            width: 150px;
+            height: 75px;
+            /* Чтобы можно было менять left/top */
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            /* Плавный перескок */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="question">Я так и знал что ты так ответишь! <br>
+        А ты любишь Юсуфа и Амира?</h1>
+
+    <div class="btn-div">
+        <a href="finish.html">
+            <button class="btn-yes">Да</button>
+        </a>
+        <button class="btn-no">Нет</button>
+    </div>
+
+    <script>
+        const btnNo = document.querySelector(".btn-no");
+        const btnYes = document.querySelector(".btn-yes");
+
+        btnNo.addEventListener('mouseenter', () => {
+            btnYes.style.opacity = '1';
+            btnNo.style.opacity = '0'
+        });
+
+
+    </script>
+</body>
+
+</html>

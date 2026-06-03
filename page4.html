@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подарок маме | Страница 4</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        .btn-no {
+            position: absolute;
+            top: 125px;
+            right: 0;
+            bottom: 0;
+            left: 25px;
+            margin: auto;
+            width: 100px;
+            height: 65px;
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.8rem;
+        }
+
+        .btn-no:hover {
+            background: #69ff47;
+        }
+
+        .question {
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="question">Хорошо, а папу?</h1>
+    <a href="page5.html">
+        <button class="btn-no">НЕТ</button>
+    </a>
+
+    <script>
+        const button = document.querySelector('.btn-no');
+        button.addEventListener('mouseenter', () => {
+            button.textContent = 'ДА';
+        });
+        button.addEventListener('mouseleave', () => {
+            button.textContent = 'НЕТ';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подарок маме | Страница 3</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        .btn-yes {
+            position: relative;
+            margin: auto;
+            width: 150px;
+            height: 75px;
+            background: #69ff47;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+        }
+
+        .btn-yes:hover {
+            animation: 0.5s ease-in-out infinite btn-yes;
+        }
+
+        @keyframes btn-yes {
+            from {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        .question {
+            position: relative;
+            top: 275px;
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="question">Спасибо что ответила правильно. <br>
+        А ты меня любишь?</h1>
+
+    <a href="page4.html">
+        <button class="btn-yes">Конечно да!</button>
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Подарок для мамы | Страница 1</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        .header {
+            position: absolute;
+            top: 100px;
+            right: 0;
+            bottom: 0;
+            left: 17.5%;
+        }
+
+        .btn-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .runaway-btn {
+            position: absolute;
+            top: 122.5px;
+            right: 0;
+            bottom: 0;
+            left: 125px;
+            margin: auto;
+            width: 100px;
+            height: 65px;
+            /* Чтобы можно было менять left/top */
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            /* Плавный перескок */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 2rem;
+
+        }
+
+        .runaway-btn:hover {
+            background: #ff6b81;
+        }
+
+        .btn-yes {
+            position: relative;
+            right: 75px;
+            margin: auto;
+            width: 100px;
+            height: 65px;
+            background: #69ff47;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 2rem;
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.1);
+        }
+        
+        .question {
+            position: relative;
+            bottom: 25px;
+            font-size: 3rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 class="header">Привет мамулечка! Этот сайт маленький подарочек для тебя ❤</h1>
+
+    <h1 class="question">Ислам любит маму?</h1>
+
+    <div class="btn-div">
+        <a href="page2.html">
+            <button class="btn-yes">Да</button>
+        </a>
+        <button class="runaway-btn" id="runawayBtn">Нет</button>
+    </div>
+
+    <script>
+        const btn = document.getElementById('runawayBtn');
+
+        // Функция случайного перемещения кнопки
+        function moveButton() {
+            const maxWidth = window.innerWidth - btn.offsetWidth;
+            const maxHeight = window.innerHeight - btn.offsetHeight;
+            const randomX = Math.random() * maxWidth;
+            const randomY = Math.random() * maxHeight;
+            btn.style.left = randomX + 'px';
+            btn.style.top = randomY + 'px';
+        }
+
+        // При наведении (пытается нажать) — убегает
+        btn.addEventListener('mouseover', moveButton);
+
+        // При клике (если всё же нажали) — выводим сообщение
+        btn.addEventListener('click', () => {
+            alert('Это неправда! Я люблю маму!');
+            moveButton(); // опять убегает
+        });
+
+        // Начальная позиция (чтобы не прилипала к углу)
+        // window.addEventListener('load', () => {
+        //     moveButton();
+        // });
+
+        // Если окно изменило размер, подкорректируем позицию, чтобы кнопка не выходила за границы
+        window.addEventListener('resize', () => {
+            const maxWidth = window.innerWidth - btn.offsetWidth;
+            const maxHeight = window.innerHeight - btn.offsetHeight;
+            let currentLeft = parseFloat(btn.style.left);
+            let currentTop = parseFloat(btn.style.top);
+            if (currentLeft > maxWidth) btn.style.left = maxWidth + 'px';
+            if (currentTop > maxHeight) btn.style.top = maxHeight + 'px';
+        });
+
+        // Удалите или закомментируйте эти строки:
+
+    </script>
+</body>
+
+</html>
